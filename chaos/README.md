@@ -39,7 +39,6 @@ Few assumptions i've made:
 **Answer box:**
 ```sql
 CREATE TABLE forms (
-    --     Add columns here
     id bigint,
     title text,
     description text,
@@ -47,7 +46,6 @@ CREATE TABLE forms (
 );
 
 CREATE TABLE questions (
-    --     Add columns here
     id bigint,
     form_id bigint,
     title text,
@@ -57,7 +55,6 @@ CREATE TABLE questions (
 );
 
 CREATE TABLE question_options (
-    --     Add columns here
     id bigint,
     question_id bigint,
     option text,
