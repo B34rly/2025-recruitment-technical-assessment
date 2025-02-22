@@ -40,7 +40,7 @@ Few assumptions i've made:
 ```sql
 CREATE TABLE forms (
     --     Add columns here
-    id int GENERATED ALWAYS as IDENTITY,
+    id bigint,
     title text,
     description text,
     PRIMARY KEY(id)
@@ -48,8 +48,8 @@ CREATE TABLE forms (
 
 CREATE TABLE questions (
     --     Add columns here
-    id int GENERATED ALWAYS as IDENTITY,
-    form_id int,
+    id bigint,
+    form_id bigint,
     title text,
     question_type question_type,
     PRIMARY KEY(id),
@@ -58,8 +58,8 @@ CREATE TABLE questions (
 
 CREATE TABLE question_options (
     --     Add columns here
-    id int GENERATED ALWAYS as IDENTITY,
-    question_id int,
+    id bigint,
+    question_id bigint,
     option text,
     PRIMARY KEY(id),
     CONSTRAINT fk_question_id FOREIGN KEY(question_id) REFERENCES questions(id) ON DELETE CASCADE
@@ -78,7 +78,7 @@ Using the above schema, write a (Postgres) SQL `SELECT` query to return all ques
 
 **Answer box:**
 ```sql
-select questions.*, json_agg(question_options.option) as options
+select questions.*, array_agg(question_options.option) as options
 from questions
 left join question_options on questions.id = question_options.question_id
 where form_id = 26583
