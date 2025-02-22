@@ -1,3 +1,7 @@
+I am applying for chaos backend, platforms and clusters. That means I am doing the chaos, backend and platfroms questions! 
+
+hopefully i do alright :)
+
 # DevSoc 2025 Subcommittee Recruitment Technical Assessment
 
 Hiya!
