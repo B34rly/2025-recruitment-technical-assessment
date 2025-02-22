@@ -2,6 +2,8 @@ I am applying for chaos backend, platforms and clusters. That means I am doing t
 
 hopefully i do alright :)
 
+(side note, in chaos q2 the db schema is a bit unclear on whether primary keys should be auto generated or not)
+
 # DevSoc 2025 Subcommittee Recruitment Technical Assessment
 
 Hiya!
