@@ -157,5 +157,54 @@ describe("Task 3", () => {
       const resp3 = await getTask3("Skibidi");
       expect(resp3.status).toBe(200);
     });
+
+    it("mad recursion oh my gah", async () => {
+
+      const entries = [
+        { type: "ingredient", name: "Egg", cookTime: 6 },
+        { type: "ingredient", name: "Lettuce", cookTime: 1 },
+      ];
+
+      for (const entry of entries) {
+        const resp = await postEntry(entry);
+        expect(resp.status).toBe(200);
+        expect(resp.body).toStrictEqual({});
+      }
+
+      const resp5 = await postEntry({
+        type: "ingredient",
+        name: "Beef",
+        cookTime: 8,
+      });
+      expect(resp5.status).toBe(200);
+
+
+      const meatball = {
+        type: "recipe",
+        name: "Meatball",
+        requiredItems: [{ name: "Beef", quantity: 1 }],
+      };
+
+      const resp4 = await postEntry(meatball);
+      expect(resp4.status).toBe(200);
+
+      const balls = {
+        type: "recipe",
+        name: "Skibidii",
+        requiredItems: [{ name: "Bruhh", quantity: 1 }, {name: "Meatball", quantity: 2}, {name: "Egg", quantity: 3}],
+      };
+      const resp1 = await postEntry(balls);
+      expect(resp1.status).toBe(200);
+
+      const resp2 = await postEntry({
+        type: "ingredient",
+        name: "Bruhh",
+        cookTime: 2,
+      });
+      expect(resp2.status).toBe(200);
+
+      const resp3 = await getTask3("Skibidi");
+      expect(resp3.status).toBe(200);
+    });
   });
 });
