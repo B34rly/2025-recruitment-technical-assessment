@@ -1,4 +1,4 @@
-I am applying for chaos backend and clusters. That means I am doing the chaos, backend questions! 
+I am applying for chaos backend, clusters and structs. That means I am doing the chaos, backend questions! 
 
 hopefully i do alright :)
 
