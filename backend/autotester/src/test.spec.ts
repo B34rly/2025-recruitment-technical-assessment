@@ -161,8 +161,8 @@ describe("Task 3", () => {
     it("mad recursion oh my gah", async () => {
 
       const entries = [
-        { type: "ingredient", name: "Egg", cookTime: 6 },
-        { type: "ingredient", name: "Lettuce", cookTime: 1 },
+        { type: "ingredient", name: "Eegg", cookTime: 6 },
+        { type: "ingredient", name: "Letetuce", cookTime: 1 },
       ];
 
       for (const entry of entries) {
@@ -173,7 +173,7 @@ describe("Task 3", () => {
 
       const resp5 = await postEntry({
         type: "ingredient",
-        name: "Beef",
+        name: "Beefo",
         cookTime: 8,
       });
       expect(resp5.status).toBe(200);
@@ -181,7 +181,7 @@ describe("Task 3", () => {
 
       const meatball = {
         type: "recipe",
-        name: "Meatball",
+        name: "Meatballz",
         requiredItems: [{ name: "Beef", quantity: 1 }],
       };
 
